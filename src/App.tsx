@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import './App.css';
 
-function App() {
+const App:FC = (): JSX.Element =>  {
   return (
     <div className="App">
      
