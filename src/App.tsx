@@ -11,10 +11,16 @@ const defaultTodos = [
 
 const App:FC = (): JSX.Element =>  {
   const [ todos, setTodos] = useState(defaultTodos);
+
+  const onRemove = (id: any):void => {
+    setTodos(
+      todos.filter(todo => todo.id !== id)
+    )
+  }
   return (
     <div className="App">
      <CreateTodo onCreate={setTodos} />
-     <Todos todos={todos} />
+     <Todos todos={todos} setTodos={setTodos} onRemove={onRemove}/>
     </div>
   );
 }
